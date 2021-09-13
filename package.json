@@ -1,25 +1,27 @@
 {
   "name": "Nexter",
   "version": "1.0.0",
-  "description": "Nexter webpage",
+  "description": "Nexter Webpage",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
-    "devserver": "live-server",
+    "devserver": "live-server --browser=firefox",
     "start": "npm-run-all --parallel devserver watch:sass",
-
+    
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' css/style.comp.css -o css/style.prefix.css",
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
-  "author": "Jonas",
+  "author": "Sivasakar",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
+    "autoprefixer": "^10.3.4",
     "concat": "^1.0.3",
-    "node-sass": "^4.5.3",
-    "npm-run-all": "^4.1.1",
-    "postcss-cli": "^4.1.1"
+    "live-server": "^1.2.1",
+    "node-sass": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.0",
+    "postcss-cli": "^8.3.1"
   }
 }
